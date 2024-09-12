@@ -1,6 +1,6 @@
 use sncast_std::{
     declare, deploy, DeclareResult, DeployResult, get_nonce, DisplayContractAddress,
-    DisplayClassHash, FeeSettings, EthFeeSettings
+    DisplayClassHash, FeeSettings, EthFeeSettings, DeclareResultTrait,
 };
 
 const USER: felt252 = 'USER1';
@@ -16,6 +16,8 @@ fn main() {
         Option::None
     )
         .expect('VotingToken declare failed');
+
+    let vote_hash = voting_token_class_hash.contract_class().class_hash
 
     let floating_token_class_hash = declare(
         "FloatingToken",
