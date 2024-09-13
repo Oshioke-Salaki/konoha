@@ -1,6 +1,6 @@
 use sncast_std::{
     declare, deploy, DeclareResult, DeployResult, get_nonce, DisplayContractAddress,
-    DisplayClassHash, FeeSettings, EthFeeSettings, DeclareResultTrait,
+    DisplayClassHash, FeeSettings, EthFeeSettings
 };
 
 const USER: felt252 = 'USER1';
@@ -10,14 +10,13 @@ fn main() {
     let salt = 0x3;
     let nonce = get_nonce('latest');
 
-    let voting_token_class_hash = declare(
+    let voting_token_class_hash: DeclareResult = declare(
         "VotingToken",
         FeeSettings::Eth(EthFeeSettings { max_fee: Option::None }),
         Option::None
-    )
-        .expect('VotingToken declare failed');
+    ).unwrap();
 
-    let vote_hash = voting_token_class_hash.contract_class().class_hash
+    // let vote_hash = voting_token_class_hash.contract_class().class_hash;
 
     let floating_token_class_hash = declare(
         "FloatingToken",

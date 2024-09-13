@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "transactions": {
+    "transactions": {
+      "bd617318ca52af53df656cc5ddfb0f39163ff79202e2da28157f521fc4335559": {
+        "name": "declare",
+        "output": {
+          "type": "ErrorResponse",
+          "message": "Transaction execution error = TransactionExecutionErrorData { transaction_index: 0, execution_error: \"Class with hash 0x01d388b7b8976172e22d8707bb6d493f8a0edb6f701bb9282ed59c66c30e1e4f is already declared.\" }"
+        },
+        "status": "Error",
+        "timestamp": 1726148026,
+        "misc": null
+      }
+    }
+  }
+}
